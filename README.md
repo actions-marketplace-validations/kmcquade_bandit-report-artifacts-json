@@ -1,7 +1,7 @@
-![Security check - Bandit](https://github.com/Joel-hanson/bandit-report-artifacts/workflows/Security%20check%20-%20Bandit/badge.svg)
+![Security check - Bandit](https://github.com/kmcquade/bandit-report-artifacts-json/workflows/Security%20check%20-%20Bandit/badge.svg)
 
 <p align="center">
-  <a href="https://github.com/marketplace/actions/bandit-report-artifacts">
+  <a href="https://github.com/marketplace/actions/bandit-report-artifacts-json">
     <img width="150px" src="./assets/logo.png">
   </a>
 </p>
