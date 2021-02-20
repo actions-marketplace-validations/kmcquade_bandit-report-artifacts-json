@@ -18,13 +18,15 @@ echo "🔥🔥🔥🔥🔥Running security check🔥🔥🔥🔥🔥🔥"
 pip install bandit
 mkdir -p $GITHUB_WORKSPACE/output
 touch $GITHUB_WORKSPACE/output/security_report.txt
+touch $GITHUB_WORKSPACE/output/security_report.json
 bandit -r $INPUT_PROJECT_PATH -o $GITHUB_WORKSPACE/output/security_report.txt -f 'txt'
+bandit -r $INPUT_PROJECT_PATH -o $GITHUB_WORKSPACE/output/security_report.json -f 'json'
 
 if [ $? -eq 0 ]; then
     echo "🔥🔥🔥🔥Security check passed🔥🔥🔥🔥"
 else
     echo "🔥🔥🔥🔥Security check failed🔥🔥🔥🔥"
-    cat $GITHUB_WORKSPACE/output/security_report.txt
+    cat $GITHUB_WORKSPACE/output/security_report.json
     if $INPUT_IGNORE_FAILURE; then
         exit 0
     else

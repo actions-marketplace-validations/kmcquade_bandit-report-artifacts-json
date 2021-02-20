@@ -52,7 +52,7 @@ jobs:
       # if: failure()
       with:
         name: Security report
-        path: output/security_report.txt
+        path: output/security_report.json
 ```
 
 
@@ -140,7 +140,7 @@ This can be achieved by add the following to your job
       # if: failure()
       with:
         name: Security report
-        path: output/security_report.txt
+        path: output/security_report.json
 ```
 
 ### License 👨🏻‍💻
