@@ -1,6 +1,6 @@
-name: "Python security check using Bandit"
+name: "Python security check using Bandit and output as JSON"
 description: "Github action to find common security issues in Python code and get its report as a artifact."
-author: "Joel-hanson@github.com"
+author: "kinnairdm@gmail.com"
 
 inputs:
   python_version:

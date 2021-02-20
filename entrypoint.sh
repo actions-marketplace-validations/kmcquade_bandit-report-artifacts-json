@@ -26,7 +26,7 @@ if [ $? -eq 0 ]; then
     echo "🔥🔥🔥🔥Security check passed🔥🔥🔥🔥"
 else
     echo "🔥🔥🔥🔥Security check failed🔥🔥🔥🔥"
-    cat $GITHUB_WORKSPACE/output/security_report.json
+    cat $GITHUB_WORKSPACE/output/security_report.txt
     if $INPUT_IGNORE_FAILURE; then
         exit 0
     else
