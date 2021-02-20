@@ -33,26 +33,27 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ ubuntu-latest, macos-latest ]
+        os: [ ubuntu-latest ]
         python-version: [ '2.7.17', '3.6.10' ]
     name: Python ${{ matrix.python-version }} ${{ matrix.os }} 
 
     steps:
-    - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Security check - Bandit
-      uses: ./
-      with:
-        python_version: ${{ matrix.python-version }}
-        project_path: .
-        ignore_failure: true
+      - name: Python security check using Bandit and output as JSON
+        uses: kmcquade/bandit-report-artifacts-json@0.0.1
+        with:
+          python_version: ${{ matrix.python-version }}
+          project_path: .
+          ignore_failure: false
 
-    - name: Security check report artifacts
-      uses: actions/upload-artifact@v1
-      # if: failure()
-      with:
-        name: Security report
-        path: output/security_report.json
+      - name: Security check report artifacts
+        uses: actions/upload-artifact@v2
+        # if: failure()
+        with:
+          name: Security report
+          path: output/
 ```
 
 
